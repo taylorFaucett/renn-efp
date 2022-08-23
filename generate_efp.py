@@ -38,19 +38,17 @@ def main():
     kappas = [1, 2]
     betas = [1, 2]
 
-    # Max dimension for EFPs. e.g. dim=3 will generate all EFPs with dimension <= 3
+    # Max dimension for EFPs. e.g. dim=5 will generate all EFPs with dimension <= 5
     dim = 5
 
     # Load pre-processed data
     # Data is a pickled dictionary containing two dataframes: features and targets
     # Features is a dataframe consisting of a list of normalized [pT, eta, phi] values
-    # You can select a subset of the 5 million points by specifying a value for N
-
     raw_data = pd.read_pickle(home / "data" / "LL_normalized.pkl")
     X = raw_data.features.to_numpy()
     y = raw_data.targets.values
 
-    # # Loop through (k,b) pairs and generate a dataframe of EFP values
+    # Loop through (k,b) pairs and generate a dataframe of EFP values
     t = tqdm([(k, b) for k in kappas for b in betas])
     for kappa, beta in t:
         t.set_description(
