@@ -45,9 +45,10 @@ def main():
     # Data is a pickled dictionary containing two dataframes: features and targets
     # Features is a dataframe consisting of a list of normalized [pT, eta, phi] values
     # You can select a subset of the 5 million points by specifying a value for N
+
     raw_data = pd.read_pickle(home / "data" / "LL_normalized.pkl")
-    X = raw_data.features.iloc[:500].to_numpy()
-    y = raw_data.targets.iloc[:500].values
+    X = raw_data.features.to_numpy()
+    y = raw_data.targets.values
 
     # # Loop through (k,b) pairs and generate a dataframe of EFP values
     t = tqdm([(k, b) for k in kappas for b in betas])
