@@ -1,6 +1,6 @@
 # Generate EFPs 
 
-This script gives an example of the generation process for the EFPs used in the paper: from the ``Mapping Machine-Learned Physics into a Human-Readable Space''
+This script gives an example of the generation process for the EFPs used in the paper "Mapping Machine-Learned Physics into a Human-Readable Space"
 Link: https://arxiv.org/abs/2010.11998
 
 If you are using conda, the necessary dependencies are given in the `environment.yml` file and can be installed with
@@ -9,13 +9,13 @@ If you are using conda, the necessary dependencies are given in the `environment
 conda env create -f environment.yml
 ```
 
-Otherwise, you mainly just need numpy, pandas, tqdm (for nice progress bars) and energyflow to run this script. These can be installed with pip instead, using
+Otherwise, you just need numpy, pandas, tqdm (for nice progress bars) and energyflow to run this script. These can be installed with pip instead, using:
 
 ```
 pip install numpy pandas tqdm energyflow
 ```
 
-The script `generate_efp.py` takes in a pair of kappa, beta values and a max graph dimension and outputs a pandas dataframe with all EFPs matching that criteria. The dataframe is then saved as a parquet file under the directory `data/efp`. Some example files are given containing 500 datapoints (e.g. the table below shows the first few columns and rows from `data/efp/dim_5_k_2_b_2.parquet`). The column headers (e.g. 2_1_0) refers to the n, d and k numbers of the graph. `n_d_k = 2_1_0` tells you that the graph has 2 nodes, 1 edge and unique identifier 0 (i.e. to distinguish between any other graphs that might have the same number of nodes and edges but in a different configuration).
+The script `generate_efp.py` takes in a pair of kappa, beta values and a max graph dimension and outputs a pandas dataframe with all EFPs matching that criteria. The dataframe is then saved as a parquet file under the directory `data/efp`. Some example files are given containing 500 generated datapoints (e.g. the table below shows the first few columns and rows from `data/efp/dim_5_k_2_b_2.parquet`). The column headers (e.g. 2_1_0) refers to the n, d and k numbers of the graph. `n_d_k = 2_1_0` tells you that the graph has 2 nodes, 1 edge and unique identifier 0 (i.e. to distinguish between any other graphs that might have the same number of nodes and edges but in a different configuration).
 
 |    |    1_0_0 |       2_1_0 |       2_2_0 |       2_3_0 |       2_4_0 |       2_5_0 |
 |---:|---------:|------------:|------------:|------------:|------------:|------------:|
