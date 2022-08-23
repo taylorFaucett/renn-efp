@@ -1,0 +1,14 @@
+name: generate_efp
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9
+  - pandas
+  - numpy
+  - black
+  - tqdm
+  - pip
+  - pip:
+    - energyflow
+    - wget
